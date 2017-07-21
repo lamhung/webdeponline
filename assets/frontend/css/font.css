@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'UTMAvo';
+    src: url('../fonts/UTM_Avo/fonts/UTMAvo.eot');
+    src: url('../fonts/UTM_Avo/fonts/UTMAvo.eot') format('embedded-opentype'),
+         url('../fonts/UTM_Avo/fonts/UTMAvo.woff2') format('woff2'),
+         url('../fonts/UTM_Avo/fonts/UTMAvo.woff') format('woff'),
+         url('../fonts/UTM_Avo/fonts/UTMAvo.ttf') format('truetype'),
+         url('../fonts/UTM_Avo/fonts/UTMAvo.svg#UTMAvo') format('svg');
+}

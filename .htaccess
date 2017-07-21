@@ -1,0 +1,19 @@
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule thumb.php - [NC,L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)x([0-9]+)x([0-9]+)x([0-9]+)/(.*)\.(jpg|jpeg|png|gif|JPG|PNG)$ thumb.php?src=$1/$2/$7.$8&w=$3&h=$4&zc=$5&q=$6 [L]
+
+RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+
+
+

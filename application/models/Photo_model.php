@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Photo_model extends MY_Model {
+    function __construct() {
+        parent::__construct('photo');
+    }
+    function defaut_value() {
+        return $data = array(
+            'name' => "",
+            'site_title' => "",
+            'image_' => backend_url() . "images/clipping_pictures.png",
+            'link' => '',
+            'description' => '',
+            'sort_order' => "",
+            'status' => 1,
+        );
+        
+    }
+    function convert_data($data = array()) {
+        if (!empty($data['image'])) {
+            $data['image_'] = base_url() . "upload/photo/thumbnail/" . $data['image'];
+        } else {
+            $data['image_'] = backend_url() . "images/clipping_pictures.png";
+        }
+        
+        if (isset($data['created'])) {
+            $data['created_'] = date('d/m/Y', $data['created']);
+        }
+        return $data;
+    }
+}
